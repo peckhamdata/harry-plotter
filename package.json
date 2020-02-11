@@ -1,0 +1,19 @@
+{
+  "name": "bc-map",
+  "version": "0.0.1",
+  "description": "Bezier City Map",
+  "main": "index.js",
+  "dependencies": {
+    "googleapis": "^39.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "bezier city",
+    "map"
+  ],
+  "author": "worldofchris",
+  "license": "SEE LICENSE IN LICENSE.md"
+}
