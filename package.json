@@ -4,6 +4,7 @@
   "description": "Bezier City Map",
   "main": "index.js",
   "dependencies": {
+    "google-spreadsheet": "^3.0.6",
     "googleapis": "^39.2.0"
   },
   "devDependencies": {},
