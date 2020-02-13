@@ -33,7 +33,7 @@ doc.useServiceAccountAuth(require('./bc-map-268007-7e2ca0c52eb6.json'))
         { red: 0.91764706, green: 0.2627451, blue: 0.20784314 },
         { red: 0.91764706, green: 0.2627451, blue: 0.20784314 }
       ]
-      var last_x = 0;
+      var last_k = 0;
       for (i=1; i<9; i++) {
         var curve = new Bezier(seq[1],
                                seq[0],
@@ -46,22 +46,29 @@ doc.useServiceAccountAuth(require('./bc-map-268007-7e2ca0c52eb6.json'))
         seq[0] = end[0];
         seq[1] = end[1];
         var LUT = curve.getLUT(mapSize * 2);
-        LUT.forEach(function(p, x) { 
+        LUT.forEach(function(p, k) { 
           var x = Math.floor(p.x);
           var y = Math.floor(p.y);
           var point = sheet.getCell(x,y);
 
-          // Horizontal lines every N
-          if (x % 25 === 0) {
-            if (x != last_x) {
+          // Vertical lines every N
+          if (k % 50 === 0) {
+            if (k != last_k) {
               var j = 0;
               for (j = 0; j < mapSize; j++) {
                 var sidepoint = sheet.getCell(j, y)              
                 sidepoint.backgroundColor = colours[i];
               }
             }
-            last_x = x;
+            last_k = k;
           } 
+          if (k === 0) {
+            var j = 0;
+            for (j = 0; j < mapSize; j++) {
+              var sidepoint = sheet.getCell(y, j)              
+              sidepoint.backgroundColor = colours[i];
+            }
+          }
 
           point.backgroundColor = colours[i];
         });
