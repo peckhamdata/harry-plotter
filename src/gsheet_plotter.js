@@ -6,13 +6,23 @@ module.exports = class GSheetPlotter {
     this.creds = creds;
   }
 
-  plot() {
+  plot_curve(curve, color, map_size) {
     var doc = this.doc
     doc.useServiceAccountAuth(this.creds)
     .then (value => {doc.loadInfo()
-      .then(function(value) {;
+      .then(function(value) {
         const sheet = doc.sheetsByIndex[0];
-        doc.sheetsByIndex[0].saveUpdatedCells();
+
+        sheet.loadCells({startRowIndex: 0, 
+                        endRowIndex: map_size,
+                        startColumnIndex:0,
+                        endColumnIndex: map_size}).then(function(value) {
+          curve.getLUT().forEach(function(p) { 
+            const cell = sheet.getCell(Math.floor(p.x),Math.floor(p.y));
+            cell.backgroundColor = color;
+          })
+          sheet.saveUpdatedCells();
+        })
       })
     })
   }
