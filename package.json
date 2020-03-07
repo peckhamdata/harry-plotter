@@ -1,20 +1,20 @@
 {
-  "name": "bc-map",
+  "name": "harry-plotter",
   "version": "0.0.1",
-  "description": "Bezier City Map",
-  "main": "index.js",
+  "description": "Plot points on various surfaces",
   "dependencies": {
     "bezier-js": "^2.5.1",
     "google-spreadsheet": "^3.0.6",
-    "googleapis": "^39.2.0"
+    "googleapis": "^39.2.0",
+    "jimp": "^0.9.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "jest"
   },
   "keywords": [
-    "bezier city",
-    "map"
+    "harry",
+    "plotter"
   ],
   "author": "worldofchris",
   "license": "SEE LICENSE IN LICENSE.md"
