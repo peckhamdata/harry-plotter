@@ -2,6 +2,10 @@
   "name": "harry-plotter",
   "version": "0.0.1",
   "description": "Plot points on various surfaces",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peckhamdata/harry-plotter.git"
+  },
   "dependencies": {
     "bezier-js": "^2.5.1",
     "google-spreadsheet": "^3.0.6",
