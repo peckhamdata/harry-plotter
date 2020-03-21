@@ -16,14 +16,16 @@ Jimp.mockImplementation(() => {
 describe('JimpPlotter', () => {
 
   it('Initialises the image', async () => {
-    var img_size = 255;
+    var img_width = 500;
+    var img_height = 255;
     var a_function = jest.fn();
     jimp_plotter = new JimpPlotter('path/to/file.png',
-                                   img_size);
+                                   img_width,
+                                   img_height);
     await jimp_plotter.init(a_function);
     expect(Jimp).toHaveBeenCalledWith(
-      img_size, 
-      img_size, 
+      img_width, 
+      img_height, 
       0x000000ff, 
       a_function);
 

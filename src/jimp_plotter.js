@@ -1,15 +1,16 @@
 const Jimp = require('jimp');
 
 module.exports = class JimpPlotter{
-  constructor(img_path, img_size) {
+  constructor(img_path, img_width, img_height) {
     this.img_path = img_path;
-    this.img_size = img_size;
+    this.img_width = img_width;
+    this.img_height = img_height;
     this.bg_color = 0x000000ff;
   }
 
   async init(result) {
-    this.jimp = new Jimp(this.img_size,
-               this.img_size,
+    this.jimp = new Jimp(this.img_width,
+               this.img_height,
                this.bg_color,
                result);
   }

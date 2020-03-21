@@ -1,7 +1,8 @@
 {
   "name": "harry-plotter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plot points on various surfaces",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/peckhamdata/harry-plotter.git"

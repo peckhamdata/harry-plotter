@@ -1,4 +1,3 @@
-const bresenham = require('bresenham');
 const Bezier = require('bezier-js');
 
 const Plotter = require("./src/gsheet_plotter.js");
